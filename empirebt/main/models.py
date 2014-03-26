@@ -16,7 +16,8 @@ class Empire(models.Model):
 	summary_locked = models.ForeignKey(User, blank=True ,null=True)
 
 
-class UserCustom(User):
+class UserCustom(models.Model):
+	user = models.OneToOneField(User)
 	commander = models.ForeignKey(Empire)
 	rank = models.CharField(max_length=255, choices=RANK_CHOICES)
 	supply_points = models.IntegerField(default=0)
