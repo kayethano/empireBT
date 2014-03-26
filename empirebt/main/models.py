@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 RANK_CHOICES = ()
 END_TYPE_CHOICES = ()
+TYPE_ENUM_CHOICES = ()
 
 class Empire(models.Model):
 	emperor = models.ForeignKey(User)
@@ -77,6 +78,23 @@ class DecisionDefend(Decision):
 class DecisionMove(Decision):
 	territory_destination = models.ForeignKey(Territory)
 	supply_points = models.IntegerField()
+
+
+class DecisionEvaluation(models.Model):
+	type_enum = models.CharField(max_length=255, choices=TYPE_ENUM_CHOICES)
+	description = models.CharField(max_length=255)
+
+
+class DecisionEvaluationAtack(DecisionEvaluation):
+	decision_attack = models.ForeignKey(DecisionAttack)
+
+
+class DecisionEvaluationDefend(DecisionEvaluation):
+	decision_defend = models.ForeignKey(DecisionDefend)
+
+
+class DecisionEvaluationMove(DecisionEvaluation):
+	decision_move = models.ForeignKey(DecisionMove)
 
 
 
