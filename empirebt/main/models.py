@@ -14,7 +14,7 @@ RANK_CHOICES = (
 	)
 
 END_TYPE_CHOICES = (
-	(0, 'Surender'),
+	(0, 'Surrender'),
 	(1, 'Timeout'),
 	(2, 'Victory'),
 	(3, 'Domination'),
