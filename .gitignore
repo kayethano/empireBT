@@ -4,3 +4,7 @@ venv
 *~
 localsettings.py
 \#*
+
+*.sqlite3
+
+empirebt/settings.py
