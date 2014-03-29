@@ -8,3 +8,7 @@ localsettings.py
 *.sqlite3
 
 empirebt/settings.py
+
+.DS_Store
+
+empirebt/.DS_Store
