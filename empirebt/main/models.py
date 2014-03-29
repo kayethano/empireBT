@@ -39,7 +39,7 @@ class Empire(models.Model):
 
 
 class UserCustom(AbstractUser):
-	commander = models.ForeignKey(Empire, blank=True, null=True)
+	empire = models.ForeignKey(Empire, blank=True, null=True)
 	rank = models.CharField(max_length=255, choices=RANK_CHOICES)
 	websocket_token = models.CharField(max_length=255)
 	supply_points = models.IntegerField(default=0)
